@@ -3,7 +3,7 @@ import "./footer.css";
 
 const footer = () => {
   return (
-    <div className='footerBox'>
+    <div className='footerBox'> {/* 회사정보가 포함된 풋터 영역 */}
       <div id="footer">
         <div id="footer-copy">
           <ul>

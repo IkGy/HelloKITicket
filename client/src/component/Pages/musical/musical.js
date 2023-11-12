@@ -28,7 +28,7 @@ function Musical() {
     jpg8,
     jpg9,
     jpg10,
-  ]);
+  ]); {/* 이미지가 담긴 배열 state */}
 
   let [musical, setMusical] = useState([
     {
@@ -101,8 +101,8 @@ function Musical() {
       endDate: "2023-11-30",
       location: "서울특별시 송파구",
     },
-  ]);
-  let [ui, setUi] = useState(1);
+  ]); {/* 클래식 공연 정보가 담긴 state */}
+  let [ui, setUi] = useState(1); {/* 세로 또는 가로로 공연을 보여줄지 판단하는 state*/}
 
   let mainMusical = [
     {
@@ -125,12 +125,12 @@ function Musical() {
       title: "Daniel Caesar",
       content: "Superpowers World Tour - Leg 3",
     },
-  ];
+  ]; {/* 달의 공연 정보 */}
   return (
     <div className="Bg">
       <div className="musical container">
       <div className='mainTitle'>뮤지컬</div>
-        <div className="Junho_musicalGridBox">
+        <div className="Junho_musicalGridBox"> {/* 달의 공연을 보여주는 컴포넌트 */}
           <div className="Junho_musicalImgBox">
             <img src={musical1} />
             <div className="Junho_musicalContentBox">
@@ -191,7 +191,7 @@ function Musical() {
           </div>
         </div>
         <div className="mainTitle">전체 전시회</div>
-        <div className="musicalBtnBox">
+        <div className="musicalBtnBox"> {/* 공연정보를 가로로 보여줄지 세로로 보여줄지 결정해주는 아이콘 박스 */}
           <i
             className="fa-solid fa-bars"
             style={{
@@ -215,7 +215,7 @@ function Musical() {
         </div>
 
         {ui == 1 ? (
-          <div className="musicalBox1">
+          <div className="musicalBox1"> {/* ui state가 1일때 세로로 공연정보 정렬 */}
             <div className="musicalBox1Header">
               <div></div>
               <div>공연명</div>
@@ -246,7 +246,7 @@ function Musical() {
             })}
           </div>
         ) : (
-          <div className="musicalBox2">
+          <div className="musicalBox2"> {/* ui state가 1이 아닐 때 가로로 공연정보 정렬 */}
             {img.map((a, i) => {
               return (
                 <div className="musicalCard">

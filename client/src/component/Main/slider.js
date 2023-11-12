@@ -10,7 +10,7 @@ import jpg5 from "./images/concert/5.gif";
 import jpg6 from "./images/concert/6.gif";
 import jpg7 from "./images/concert/7.gif";
 
-const Carousel = () => {
+const Carousel = () => { {/* 이미지 슬라이드 컴포넌트 */}
   const responsive = {
     0: {
       items: 5,

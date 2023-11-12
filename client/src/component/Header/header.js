@@ -10,9 +10,9 @@ import { API_URL } from "../config/contansts";
 function Header() {
   const navigate = useNavigate();
 
-  let [modalIsOpen, setModalIsOpen] = useState(false);
-  let [zIndex, setZindex] = useState(1);
-  let [end, setEnd] = useState("");
+  let [modalIsOpen, setModalIsOpen] = useState(false); // 로그인 모달창이 유무를 판단하는 state
+  let [zIndex, setZindex] = useState(1); // 헤더의 z-index값을 조정해주는 state
+  let [end, setEnd] = useState(""); // 헤더의 opacity값을 조정해주는 class state
 
   
   useEffect(() => {
@@ -20,7 +20,7 @@ function Header() {
       setEnd("end");
     }, 100);
     return setEnd("");
-  }, [modalIsOpen]);
+  }, [modalIsOpen]); // 로그인 모달창 등장시 등장애내메이션을 담당하는 useEffect
 
   const onLogin = (e) => {
     e.preventDefault();
@@ -42,38 +42,39 @@ function Header() {
           return alert("로그인 실패");
         });
     }
-  };
+  }; // 로그인 버튼 클릭 시 로그인 성공 유무를 판단하는 함수
+
   const Logout = (e) => {
     e.preventDefault();
     removeCookie("login");
     navigate("/");
-  };
+  }; // 로그아웃을 가능하게 하는 함수
 
   return (
     <>
-      <div className="title">
-        <Link to="/" style={{ textDecoration: "none" }}>
+      <div className="title"> {/* 로고, 검색창, 로그인/회원가입버튼이 포함된 영역 */}
+        <Link to="/" style={{ textDecoration: "none" }}> {/* 사이트 로고 */}
           <div className="hello">
             <span className="titleIcon">
               <FaTicketAlt />
             </span>
             Hello<span className="kiticket">Kiticket</span>
           </div>
-        </Link>
-        <div className="titleInputBox">
+        </Link> 
+        <div className="titleInputBox"> {/* 사이트 검색창 */}
           <input placeholder="어떤 공연을 보고 싶으세요?"></input>
           <span className="serchIcon">
             <i class="fa-solid fa-magnifying-glass"></i>
           </span>
-        </div>
+        </div> 
         {getCookie("login") ? (
-          <div className="navLogin">
+          <div className="navLogin"> {/* 로그인 성공시 보여주는 화면 */}
             <span style={{color: 'rgb(229, 0, 35)'}}>{getCookie("login")}</span>님 환영합니다!
             <span style={{color: 'rgb(229, 0, 35)'}}> / </span>
             <button className='logoutBtn' onClick={Logout}>로그아웃</button>
           </div>
         ) : (
-          <div className="navLogin">
+          <div className="navLogin"> {/* 로그인 전에 보여주는 화면 */}
             <Link
               className="loginBtn"
               style={{ textDecoration: "none" }}
@@ -102,7 +103,7 @@ function Header() {
             setModalIsOpen(false);
             setZindex(1);
           }}
-        >
+        > {/* 로그인버튼 클릭시 보여주는 모달창 */}
           <form onSubmit={onLogin} className={"start " + end}>
             <div
               className="loginCloseBtn"
@@ -143,8 +144,8 @@ function Header() {
         </Modal>
       </div>
 
-      <div className="menuNav" style={{ zIndex: zIndex }}>
-        <div className="menu SMNEffect21">
+      <div className="menuNav" style={{ zIndex: zIndex }}> {/* 메뉴바가 포함된 영역 */}
+        <div className="menu">
           <Link to="/">홈</Link>
         </div>
         <div className="menu">
@@ -166,11 +167,11 @@ function Header() {
           <Link to="/event">공지사항</Link>
         </div>
         {getCookie("login") ? (
-          <div className="lastmenu">
+          <div className="lastmenu"> {/* 로그인이 되었을시 마이페이지 접속 가능 */}
             <Link to="/mypage">마이페이지</Link>
           </div>
         ) : (
-          <div className="lastmenu">
+          <div className="lastmenu"> {/* 로그인이 안되어 있을시 로그인 모달창 등장 */}
             <a href="#" onClick={()=>{
               setModalIsOpen(true);
               setZindex(0);

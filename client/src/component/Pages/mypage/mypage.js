@@ -9,19 +9,22 @@ import axios from "axios";
 import { getCookie, removeCookie } from "../../../useCookies";
 
 function Mypage() {
-  let [edit, setEdit] = useState(false);
+  let [edit, setEdit] = useState(false); //개인정보 수정을 위한 state
 
   const Logout = (e) => {
     e.preventDefault();
     removeCookie("login");
     navigate("/");
-  };
+  }; //로그아웃을 가능하게 해주는 함수
+
+  const navigate = useNavigate();
+
   const newTicket =(e)=>{
     e.preventDefault();
     navigate("/newTicket");
-  }
+  } //newTicket을 가능하게 해주는 함수
 
-  const navigate = useNavigate();
+  
   const NewUser = async (e) => {
     e.preventDefault();
     const id = e.target.Nid.value;
@@ -47,7 +50,7 @@ function Mypage() {
     } else {
       return alert("전부 입력해주세요");
     }
-  };
+  }; //회원가입에 필요한 비동기함수
 
   let [reservation, setReservation] = useState([
     {
@@ -74,14 +77,13 @@ function Mypage() {
       endDate: "2023-11-30",
       location: "서울특별시 송파구",
     },
-  ]);
+  ]); //예매내역 임시 데이터
   return (
     <div className="mypageBg">
       <div className="mypage container">
         {edit ? (
-          <form className="sform" onSubmit={NewUser}>
+          <form className="sform" onSubmit={NewUser}> {/* 개인정보 수정 클릭시 보여주는 폼 */}
             <h3 style={{ fontSize: "2.5vw" }}>개인정보 수정</h3>
-
             <div className="form-group">
               <label>아이디</label>
               <input
@@ -152,8 +154,8 @@ function Mypage() {
             </div>
           </form>
         ) : (
-          <>
-            <div className="mainTitle">마이페이지</div>
+          <> {/* 마이페이지 접속시 보여주는 페이지 */}
+            <div className="mainTitle">마이페이지</div> 
             <div className="mypageGridBox">
               <div className="mypageProfile">
                 <i class="fa-solid fa-circle-user"></i>
@@ -199,7 +201,7 @@ function Mypage() {
             <Reservation
               reservation={reservation}
               setReservation={setReservation}
-            ></Reservation>
+            ></Reservation> {/* 예매내역을 보여주는 컴포넌트 */}
           </>
         )}
       </div>

@@ -9,7 +9,7 @@ import jpg4 from "./../../Main/images/classic/4.gif";
 import jpg5 from "./../../Main/images/classic/5.gif";
 import { useState } from 'react';
 
-const MonthCarousel = () => {
+const MonthCarousel = () => { {/* 달의 공연정보 이미지 슬라이드 컴포넌트 */}
   const responsive = {
     0: {
       items: 4,
@@ -67,7 +67,7 @@ const MonthCarousel = () => {
     },
   ]);
 
-  const items = monthClassic.map((image, i) => {
+  const items = monthClassic.map((image, i) => { 
     return (
       <ItemsContain>
         <ItemsWrap>

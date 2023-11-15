@@ -50,17 +50,26 @@
 
 
 - Frontend
+  
 º HTML
+
 º CSS
+
 º JavaScript
+
 º react
+
 	OnePageLayout 형태의 디자인으로 구성하여 스크롤이동으로 원하는 정보를 볼 수 있도록 구현
 º axios
 
 - Backend
+  
 º Node.Js
+
 º express
+
 º multer
+
 º sequelize
 
 - Database -

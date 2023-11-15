@@ -45,7 +45,7 @@
 
 ## 협업, 일정관리 프로그램
 º Discord
-º gitHub : https://github.com/IkGy/HelloKITicket
+º gitHub
 기술 스택
 
 

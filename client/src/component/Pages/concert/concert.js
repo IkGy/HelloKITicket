@@ -39,7 +39,7 @@ function Concert() {
     jpg8,
     jpg9,
     jpg10,
-  ]);
+  ]); {/* 이미지가 담긴 배열 state */}
 
   let [concert, setConcert] = useState([
     {
@@ -112,8 +112,8 @@ function Concert() {
       endDate: "2023-11-30",
       location: "서울특별시 송파구",
     },
-  ]);
-  let [ui, setUi] = useState(1);
+  ]); {/* 클래식 공연 정보가 담긴 state */}
+  let [ui, setUi] = useState(1); {/* 세로 또는 가로로 공연을 보여줄지 판단하는 state*/}
 
   let mainConcert = [
     {
@@ -136,12 +136,12 @@ function Concert() {
       title: "Daniel Caesar",
       content: "Superpowers World Tour - Leg 3",
     },
-  ];
+  ]; {/* 달의 공연 정보 */}
   return (
     <div className="Bg">
       <div className="concert container">
       <div className='mainTitle'>콘서트</div>
-        <div className="jsw_concertGridBox">
+        <div className="jsw_concertGridBox"> {/* 달의 공연을 보여주는 컴포넌트 */}
           <div className="jsw_concertImgBox" onClick={ToTicket}>
             <img src={concert1} />
             <div className="jsw_concertContentBox">
@@ -202,7 +202,7 @@ function Concert() {
           </div>
         </div>
         <div className="mainTitle">전체 전시회</div>
-        <div className="concertBtnBox">
+        <div className="concertBtnBox"> {/* 공연정보를 가로로 보여줄지 세로로 보여줄지 결정해주는 아이콘 박스 */}
           <i
             className="fa-solid fa-bars"
             style={{
@@ -226,7 +226,7 @@ function Concert() {
         </div>
 
         {ui == 1 ? (
-          <div className="concertBox1">
+          <div className="concertBox1"> {/* ui state가 1일때 세로로 공연정보 정렬 */}
             <div className="concertBox1Header">
               <div></div>
               <div>공연명</div>
@@ -257,7 +257,7 @@ function Concert() {
             })}
           </div>
         ) : (
-          <div className="concertBox2">
+          <div className="concertBox2"> {/* ui state가 1이 아닐 때 가로로 공연정보 정렬 */}
             {img.map((a, i) => {
               return (
                 <div className="concertCard">

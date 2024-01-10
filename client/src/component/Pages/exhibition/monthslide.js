@@ -9,7 +9,7 @@ import jpg4 from "./../../Main/images/exhibition/4.jpg";
 import jpg5 from "./../../Main/images/exhibition/5.jpg";
 import { useState } from 'react';
 
-const MonthCarousel = () => {
+const MonthCarousel = () => { {/* 달의 공연정보 이미지 슬라이드 컴포넌트 */}
   const responsive = {
     0: {
       items: 4,

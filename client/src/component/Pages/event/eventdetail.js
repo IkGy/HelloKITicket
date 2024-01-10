@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 
 function EventDetail(){
-  let {id} = useParams(); 
+  let {id} = useParams(); {/* useparams를 파악 */}
 
   const post = [
     {
@@ -55,7 +55,7 @@ function EventDetail(){
     
   ];
 
-  let index = post.find((a)=>{ return a.id == id })
+  let index = post.find((a)=>{ return a.id == id }) //useparams와 공지사항id를 비교하여 알맞는 공지사항 정보를 표사
 
   return (
     <div className='postDetailBoxBg'>

@@ -25,7 +25,7 @@ function Classic() {
     jpg8,
     jpg9,
     jpg10,
-  ]);
+  ]); {/* 이미지가 담긴 배열 state */}
 
   let [classic, setClassic] = useState([
     {
@@ -98,34 +98,15 @@ function Classic() {
       endDate: "2023-11-30",
       location: "서울특별시 송파구",
     },
-  ]);
-  let [ui, setUi] = useState(1);
-  const maxLength = 12; // 원하는 최대 길이 설정
-  const originalText = [
-    "클래식1",
-    "클래식2",
-    "클래식3",
-    "클래식4",
-    "클래식5",
-    "클래식6",
-    "클래식7",
-    "클래식8",
-    "클래식9",
-    "클래식10",
-  ];
-  const [truncatedText, setTruncatedText] = useState(originalText);
-  useEffect(() => {
-    if (originalText.length > maxLength) {
-      setTruncatedText(originalText.substring(0, maxLength) + "...");
-    }
-  }, [originalText, maxLength]);
+  ]); {/* 클래식 공연 정보가 담긴 state */}
+  let [ui, setUi] = useState(1); {/* 세로 또는 가로로 공연을 보여줄지 판단하는 state*/}
 
   return (
     <div className="Bg">
       <div className="classic container">
-        <MonthCarousel></MonthCarousel>
+        <MonthCarousel></MonthCarousel> {/* 달의 클래식 공연을 보여주는 컴포넌트 */}
         <div className="mainTitle">전체 클래식</div>
-        <div className="classicBtnBox">
+        <div className="classicBtnBox"> {/* 공연정보를 가로로 보여줄지 세로로 보여줄지 결정해주는 아이콘 박스 */}
           <i
             className="fa-solid fa-bars"
             style={{
@@ -153,7 +134,7 @@ function Classic() {
         </div>
 
         {ui == 1 ? (
-          <div className="classicBox1">
+          <div className="classicBox1"> {/* ui state가 1일때 세로로 공연정보 정렬 */}
             <div className="classicBox1Header">
               <div></div>
               <div>공연명</div>
@@ -186,7 +167,7 @@ function Classic() {
             })}
           </div>
         ) : (
-          <div className="classicBox2">
+          <div className="classicBox2"> {/* ui state가 1이 아닐 때 가로로 공연정보 정렬 */}
             {img.map((a, i) => {
               return (
                 <div className="classicCard">

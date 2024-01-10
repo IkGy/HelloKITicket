@@ -2,7 +2,7 @@ import "./register.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function Register() {
+function Register() { {/* 회원가입 컴포넌트 */}
   const navigate = useNavigate();
   const NewUser = async (e) => {
     e.preventDefault();

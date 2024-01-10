@@ -59,7 +59,7 @@ function Event() {
       content: "내용3",
       date: "날짜3",
     },
-  ];
+  ]; {/* 공지사항의 정보가 담긴 state */}
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -97,7 +97,7 @@ function Event() {
                   <div className="postIntro">
                     <div className="postTitle">{a.title}</div>
                     <div className="postDate">
-                      {a.date}, <i class="fa-solid fa-eye"></i> 주회수
+                      {a.date}, <i class="fa-solid fa-eye"></i> 조회수
                     </div>
                   </div>
                   <div className="postImg">대표이미지</div>
@@ -113,7 +113,7 @@ function Event() {
           onPageChange={handlePageChange}
           totalPages={totalPages}
           pageNumbers={pageNumbers}
-        />
+        /> {/* 공지사항안에서 다음 페이지로 이동시켜주는 컴포넌트 영역 */}
       </div>
     </div>
   );
@@ -128,7 +128,7 @@ function Pagination({
   pageNumbers,
 }) {
   return (
-    <div className="pagination">
+    <div className="pagination"> {/* 현재 페이지의 위치를 알려주는 컴포넌트 */}
       {currentPage > 1 && (
         <span onClick={() => onPageChange(currentPage - 1)}>&laquo;</span>
       )}

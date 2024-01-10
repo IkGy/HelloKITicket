@@ -22,7 +22,7 @@ const Create = () => {
           <div className="notice-title">
             공지사항 등록
           </div>
-          <div className="notice-form">
+          <div className="notice-form"> {/* form 박스*/}
             <form onSubmit={handleSubmit}>
               <div className="title-box">
                 <label htmlFor="title">제목</label>

@@ -25,7 +25,7 @@ function Exhibition() {
     jpg8,
     jpg9,
     jpg10,
-  ]);
+  ]); {/* 이미지가 담긴 배열 state */}
 
   let [exhibition, setExhibition] = useState([
     {
@@ -98,34 +98,15 @@ function Exhibition() {
       endDate: "2023-11-30",
       location: "서울특별시 송파구",
     },
-  ]);
-  let [ui, setUi] = useState(1);
-  const maxLength = 12; // 원하는 최대 길이 설정
-  const originalText = [
-    "전시회1",
-    "전시회2",
-    "전시회3",
-    "전시회4",
-    "전시회5",
-    "전시회6",
-    "전시회7",
-    "전시회8",
-    "전시회9",
-    "전시회10",
-  ];
-  const [truncatedText, setTruncatedText] = useState(originalText);
-  useEffect(() => {
-    if (originalText.length > maxLength) {
-      setTruncatedText(originalText.substring(0, maxLength) + "...");
-    }
-  }, [originalText, maxLength]);
+  ]); {/* 클래식 공연 정보가 담긴 state */}
+  let [ui, setUi] = useState(1); {/* 세로 또는 가로로 공연을 보여줄지 판단하는 state*/}
 
   return (
     <div className="Bg">
       <div className="exhibition container">
         <MonthCarousel></MonthCarousel>
         <div className="mainTitle">전체 전시회</div>
-        <div className="exhibitionBtnBox">
+        <div className="exhibitionBtnBox"> {/* 공연정보를 가로로 보여줄지 세로로 보여줄지 결정해주는 아이콘 박스 */}
           <i
             className="fa-solid fa-bars"
             style={{
@@ -153,7 +134,7 @@ function Exhibition() {
         </div>
 
         {ui == 1 ? (
-          <div className="exhibitionBox1">
+          <div className="exhibitionBox1"> {/* ui state가 1일때 세로로 공연정보 정렬 */}
             <div className="exhibitionBox1Header">
               <div></div>
               <div>공연명</div>
@@ -186,7 +167,7 @@ function Exhibition() {
             })}
           </div>
         ) : (
-          <div className="exhibitionBox2">
+          <div className="exhibitionBox2"> {/* ui state가 1이 아닐 때 가로로 공연정보 정렬 */}
             {img.map((a, i) => {
               return (
                 <div className="exhibitionCard">

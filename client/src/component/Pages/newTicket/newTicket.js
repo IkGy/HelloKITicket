@@ -27,8 +27,8 @@ function NewTicket() {
 
     await axios
       .post(`${API_URL}/newTicket`, {
-        title,
-        kind,
+        title:title,
+        kind:kind,
         price,
         help,
         imageURL,

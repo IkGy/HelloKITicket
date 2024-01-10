@@ -25,7 +25,7 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 const makeFolder = (dir)=>{
-  if (!fs.existsSync(dir)) {
+  if (!fs.existsSync(dir)) {//upload 폴더가 있는지 감지하는 부분
     fs.mkdirSync(dir)
   }
 }//현제 폴더에 "upload"폴더가 없는 경우 폴더를 생성해주는 코드

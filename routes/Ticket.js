@@ -3,19 +3,23 @@ const Ticket = require('../models/ticket');
 const router = express.Router();
 
 router
-.get('/',async (req,res,next)=>{
-  try {
+// .get('/',async (req,res,next)=>{
+//   try {
     
-  } catch (error) {
-    console.error(error);
-    next(error);
-  }
-})
+//   } catch (error) {
+//     console.error(error);
+//     next(error);
+//   }
+// })
 .post('/',async (req,res,next)=>{
   try {
+    console.log(req.body);
     console.log(typeof(req.body.kind));
     console.log(req.body.imageURL);
-    const newTicket = Ticket.create({
+    const newTicket = Ticket.create({//{title:"asdfasdf",kind:"1"}
+      
+      //create => db테이블에 값 입력하는거
+      //findOne, findAll => db에서 값 조회
       name: req.body.title,
       kind: req.body.kind,
       price: req.body.price,

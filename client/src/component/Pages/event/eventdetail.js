@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 
 function EventDetail(){
-  let {id} = useParams();
+  let {id} = useParams(); 
 
   const post = [
     {
